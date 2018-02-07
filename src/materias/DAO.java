@@ -41,18 +41,18 @@ public class DAO {
    
    public void pesquisar(String chave, String Sql) {
         try {                
-            //Usuario usuario = new Usuario();
             //conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
             conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             consulta = conexao.createStatement();
             rs = consulta.executeQuery(Sql);    
-            //limpa ArrayList na classe 
-            //Projeto.Limpar();
-                 
+
             while (rs.next()) {                
                    switch(chave){
-                   case "Chamados":
-                        //Chamado.setArray(rs.getString("ID_CHAMADO"));
+                   case "Provas":
+                        //data das provas
+                       break;
+                   default:
+                       //Inserir consulta padrão
                        break;
                    }                                
             }     
@@ -98,21 +98,5 @@ public class DAO {
         }
     }
 
-    public static void apagar (String Tabela, Integer ID) {
-        try {
-            conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
-            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
-            PreparedStatement delecao = null;
-            String comando = "DELETE FROM " + Tabela + " WHERE ID_CHAMADO = ?";
-            delecao = conexao.prepareStatement(comando);
-            delecao.setString(1,ID.toString());
-            delecao.executeUpdate();
-
-            conexao.close();
-
-        } catch (SQLException e) {
-            //TratamentoDeErro(e);
-            System.out.println("Falha ao alterar dados na tabela!");
-        }
-    }
+   
 }

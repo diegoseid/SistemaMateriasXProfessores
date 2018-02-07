@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="348.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="materias.Cad_MateriaController">
+   <children>
+      <Label layoutX="179.0" layoutY="23.0" text="Cadastro Materia" />
+      <Label layoutX="72.0" layoutY="145.0" prefHeight="17.0" prefWidth="44.0" text="Materia" />
+      <Label layoutX="71.0" layoutY="179.0" prefHeight="17.0" prefWidth="91.0" text="Dia da semana" />
+      <TextField layoutX="163.0" layoutY="141.0" />
+      <ComboBox layoutX="163.0" layoutY="175.0" prefWidth="150.0" />
+      <JFXButton layoutX="27.0" layoutY="295.0" text="Cadastrar" />
+      <JFXButton layoutX="332.0" layoutY="295.0" text="Cancelar" />
+   </children>
+</AnchorPane>
