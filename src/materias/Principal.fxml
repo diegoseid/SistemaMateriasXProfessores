@@ -31,7 +31,7 @@
         </menus>
       </MenuBar>
       <Label layoutX="49.0" layoutY="67.0" text="Hoje é" />
-      <Label layoutX="123.0" layoutY="67.0" text="&lt;Dia da Semana&gt;" />
+      <Label fx:id="DiaDaSemana" layoutX="123.0" layoutY="67.0" text="&lt;Dia da Semana&gt;" />
       <Label layoutX="54.0" layoutY="129.0" text="Materia:" />
       <Label layoutX="119.0" layoutY="129.0" text="Materia do dia" />
       <Label layoutX="54.0" layoutY="158.0" text="Professor:" />
@@ -47,7 +47,7 @@
       <Pane fx:id="P_Marcar" layoutX="31.0" layoutY="250.0" prefHeight="87.0" prefWidth="284.0" style="-fx-background-color: orange;" visible="false">
          <children>
             <Label layoutX="14.0" layoutY="36.0" text="Prova dia" />
-            <DatePicker focusTraversable="false" layoutX="80.0" layoutY="31.0" />
+            <DatePicker fx:id="DtPc" focusTraversable="false" layoutX="80.0" layoutY="31.0" />
          </children>
       </Pane>
       <Button fx:id="but_MarcarProva" focusTraversable="false" layoutX="198.0" layoutY="360.0" mnemonicParsing="false" text="Marcar Prova" visible="false" />
