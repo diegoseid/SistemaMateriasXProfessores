@@ -67,15 +67,15 @@ public class DAO {
 
     public static void inserir(String sql) {
         try {
-            conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
-            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
+            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
+            conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             consulta = conexao.createStatement();
             consulta.executeUpdate(sql);
 
             consulta.close();
 
         } catch (SQLException e) {
-            //TratamentoDeErro(e);
+            e.printStackTrace();
             System.out.println("Falha ao inserir dados na tabela!");
         }
     }

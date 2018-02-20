@@ -12,9 +12,9 @@
       <Label layoutX="179.0" layoutY="23.0" text="Cadastro Materia" />
       <Label layoutX="72.0" layoutY="145.0" prefHeight="17.0" prefWidth="44.0" text="Materia" />
       <Label layoutX="71.0" layoutY="179.0" prefHeight="17.0" prefWidth="91.0" text="Dia da semana" />
-      <TextField layoutX="163.0" layoutY="141.0" />
+      <TextField fx:id="TFMateria" layoutX="163.0" layoutY="141.0" />
       <ComboBox fx:id="CBDiaSemana" layoutX="163.0" layoutY="175.0" prefWidth="150.0" />
-      <JFXButton layoutX="27.0" layoutY="295.0" text="Cadastrar" />
+      <JFXButton fx:id="BTCadastar" layoutX="27.0" layoutY="295.0" text="Cadastrar" />
       <JFXButton layoutX="332.0" layoutY="295.0" text="Cancelar" />
    </children>
 </AnchorPane>

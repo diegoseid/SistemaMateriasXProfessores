@@ -7,17 +7,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="453.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="materias.Cad_ProfessorController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="materias.Cad_ProfessorController">
    <children>
       <JFXButton layoutX="342.0" layoutY="305.0" text="Cancelar" />
-      <JFXButton layoutX="37.0" layoutY="305.0" text="Cadastrar" />
-      <ComboBox layoutX="174.0" layoutY="206.0" prefWidth="150.0" />
-      <TextField layoutX="174.0" layoutY="139.0" />
+      <JFXButton fx:id="BTCadastar" layoutX="37.0" layoutY="305.0" text="Cadastrar" />
+      <ComboBox fx:id="CBMateria" layoutX="174.0" layoutY="206.0" prefWidth="150.0" />
+      <TextField fx:id="TFNome" layoutX="174.0" layoutY="139.0" />
       <Label layoutX="81.0" layoutY="210.0" prefHeight="17.0" prefWidth="56.0" text="Materia:" />
       <Label layoutX="81.0" layoutY="179.0" prefHeight="17.0" prefWidth="44.0" text="Email:" />
       <Label layoutX="189.0" layoutY="33.0" text="Cadastro Professor" />
       <Label layoutX="82.0" layoutY="143.0" prefHeight="17.0" prefWidth="44.0" text="Nome:" />
-      <TextField layoutX="173.0" layoutY="175.0" />
+      <TextField fx:id="TFEmail" layoutX="173.0" layoutY="175.0" />
    </children>
 </AnchorPane>
