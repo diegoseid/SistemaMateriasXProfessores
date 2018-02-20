@@ -19,13 +19,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="Cadastrar">
             <items>
-              <MenuItem mnemonicParsing="false" text="Professor" />
-                  <MenuItem mnemonicParsing="false" text="Materia" />
+              <MenuItem fx:id="MIProfessor" mnemonicParsing="false" text="Professor" />
+                  <MenuItem fx:id="MiMateria" mnemonicParsing="false" text="Materia" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ajuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Sobre" />
+              <MenuItem fx:id="MISobre" mnemonicParsing="false" text="Sobre" />
             </items>
           </Menu>
         </menus>

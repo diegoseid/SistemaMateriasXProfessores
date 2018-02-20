@@ -6,8 +6,13 @@
 package materias;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -16,12 +21,18 @@ import javafx.fxml.Initializable;
  */
 public class Cad_MateriaController implements Initializable {
 
+    @FXML private ComboBox<ObservableList> CBDiaSemana;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    ArrayList array = new ArrayList<String>();
+    ObservableList<String> oblProjeto = FXCollections.observableArrayList("Segunda-Feira", "Terça-Feira", "Quarta-Feira");
+    CBDiaSemana.setValue(oblProjeto);
+            
     }    
     
 }
