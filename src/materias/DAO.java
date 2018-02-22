@@ -19,7 +19,6 @@ public class DAO {
     
     public static void testeDaConexao() {
         try {
-            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
             conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             System.out.println("Conexao com o banco realizada com sucesso.");
         } catch (Exception e) {            
@@ -40,18 +39,22 @@ public class DAO {
 
    
    public void pesquisar(String chave, String Sql) {
-        try {                
-            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
-            conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
+        try {
+          Cad_ProfessorController cadp = new Cad_ProfessorController();
+          conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             consulta = conexao.createStatement();
             rs = consulta.executeQuery(Sql);    
 
             while (rs.next()) {                
                    switch(chave){
-                   case "Provas":
-                        //data das provas
+                   case "Materia":
+                       Cad_ProfessorController.BucarDados(rs.getString("MATERIA"));
                        break;
-                   default:
+                   case "IDMateria":
+                       cadp.IdMateriaP(rs.getInt("IDMATERIA"));
+                       System.out.println(Sql);
+                       break;
+                   case "Principal":
                        //Inserir consulta padrão
                        break;
                    }                                
@@ -67,8 +70,7 @@ public class DAO {
 
     public static void inserir(String sql) {
         try {
-            //conexao = DriverManager.getConnection("jdbc:oracle:thin:@54.233.238.228:1251:XE", "system", "yazz");
-            conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
+           conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             consulta = conexao.createStatement();
             consulta.executeUpdate(sql);
 

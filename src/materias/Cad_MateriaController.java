@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package materias;
 
 import com.jfoenix.controls.JFXButton;
@@ -35,7 +30,7 @@ public class Cad_MateriaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    ObservableList<String> oblProjeto = FXCollections.observableArrayList("Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira");
+    ObservableList<String> oblProjeto = FXCollections.observableArrayList("Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira");
     CBDiaSemana.setValue(weekDay(Calendar.getInstance()));
     CBDiaSemana.setItems(oblProjeto);
     
