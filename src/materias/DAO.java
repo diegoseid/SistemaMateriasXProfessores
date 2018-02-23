@@ -41,6 +41,7 @@ public class DAO {
    public void pesquisar(String chave, String Sql) {
         try {
           Cad_ProfessorController cadp = new Cad_ProfessorController();
+          PrincipalController princ = new PrincipalController();
           conexao = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "Oracleuni9");
             consulta = conexao.createStatement();
             rs = consulta.executeQuery(Sql);    
@@ -52,10 +53,10 @@ public class DAO {
                        break;
                    case "IDMateria":
                        cadp.IdMateriaP(rs.getInt("IDMATERIA"));
-                       System.out.println(Sql);
                        break;
-                   case "Principal":
+                   case "Inicial":
                        //Inserir consulta padrão
+                       princ.ListarDados(rs.getString(1), rs.getString(2), rs.getString(3));
                        break;
                    }                                
             }     
@@ -64,7 +65,7 @@ public class DAO {
             rs.close();
 
         } catch (SQLException e) { 
-           // TratamentoDeErro(e);
+           e.printStackTrace();
         }
     }
 

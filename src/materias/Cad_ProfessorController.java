@@ -1,7 +1,6 @@
 package materias;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.javafx.binding.StringFormatter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -28,7 +27,8 @@ public class Cad_ProfessorController implements Initializable {
     private String chave = "Materia", Sql;
     public static int IDMateria;
     public String Materia;
-    public static ObservableList<String> oblProjeto;
+    public ObservableList<String> oblProjeto;
+    public static ArrayList<String> array = new ArrayList<>();
 
     /**
      * Initializes the controller class.
@@ -38,8 +38,6 @@ public class Cad_ProfessorController implements Initializable {
         // TODO
     Sql = "Select idmateria, materia from materia";    
     con.pesquisar(chave, Sql);
-    
-    CBMateria.setItems(oblProjeto);
     
     //Botão para cadastrar uma Professor.
     BTCadastar.setOnAction(((event) -> {
@@ -51,6 +49,9 @@ public class Cad_ProfessorController implements Initializable {
       DAO.inserir(Sql);
     }));
     
+    oblProjeto = FXCollections.observableArrayList(array);
+    CBMateria.setItems(oblProjeto);
+    
     }
     
     public void IdMateriaP(int IDMateria){
@@ -58,13 +59,7 @@ public class Cad_ProfessorController implements Initializable {
     }
     
     public static void BucarDados(String Materia){
-  
-        ArrayList<String> array = new ArrayList<>();
-        array.add(Materia);
-
-       for(String ar : array){
-           oblProjeto = FXCollections.observableArrayList(ar);
-       }
+           array.add(Materia);
     }
 
     }

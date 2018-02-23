@@ -3,6 +3,7 @@ package materias;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormatSymbols;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -34,6 +35,13 @@ public class PrincipalController implements Initializable {
     @FXML private MenuItem MIProfessor;
     @FXML private MenuItem MiMateria;
     @FXML private MenuItem MISobre;
+    @FXML private Label LBLMateria;
+    @FXML private Label LBLProfessor;
+    @FXML private Label LBLEmail;
+    
+    private DAO con = new DAO();
+    private String Sql, Chave = "Inicial";
+    public static ArrayList<String> array = new ArrayList<>();
 
     /**
      * Initializes the controller class.
@@ -84,6 +92,16 @@ public class PrincipalController implements Initializable {
           but_MarcarProva.setVisible(false); 
           DAO.testeDaConexao();
       }));
+      
+       //Pesquisar no banco os dados de acordo com o dia da semana
+        Sql = "select ma.materia, prf.nomeprofessor, prf.email from materia ma "
+                + "join professor prf on ma.IDMATERIA = prf.FK_IDMATERIA where ma.DIAAULA = '"+ DiaDaSemana.getText() +"'";
+        con.pesquisar(Chave, Sql);
+        
+        //seta o valor dos dados na tela
+        LBLMateria.setText(array.get(0));
+        LBLProfessor.setText(array.get(1));
+        LBLEmail.setText(array.get(2));
         
     } 
     
@@ -91,5 +109,10 @@ public class PrincipalController implements Initializable {
     public String weekDay(Calendar cal) {
     return new DateFormatSymbols().getWeekdays()[cal.get(Calendar.DAY_OF_WEEK)];
 }  
+    public void ListarDados(String Materia, String Profesor, String Email){
+     array.add(Materia);
+     array.add(Profesor);
+     array.add(Email);
+    }
     
 }
